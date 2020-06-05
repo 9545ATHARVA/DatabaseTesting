@@ -1,11 +1,11 @@
-package mypack;
+package smoketest;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Test3 {
+public class Test5 {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
@@ -15,11 +15,11 @@ public class Test3 {
 
         Statement st = con.createStatement();
         try {
-            int r = st.executeUpdate(" INSERT INTO PERSONS(ID,FIRSTNAME,LASTNAME , AGE ) VALUES (1,'kanchan','bhendarkar',28),(2,'heena','bhendarkar',28),(3,'prabhakar','bhendarkar',58),(4,'deepika','bhendarkar',28),(5,'kajal','bhendarkar',25);");
+            int r = st.executeUpdate("DELETE FROM PERSONS WHERE firstname='sunanda';");
             if (r >= 0) {
-                System.out.println("Insertion Test Pass");
+                System.out.println("Deletion Test Pass");
             } else {
-                System.out.println("Insertion Test Failed");
+                System.out.println("Deletion Test Failed");
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());

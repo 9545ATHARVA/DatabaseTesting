@@ -1,4 +1,4 @@
-package mypack;
+package smoketest;
 
 import java.sql.*;
 
